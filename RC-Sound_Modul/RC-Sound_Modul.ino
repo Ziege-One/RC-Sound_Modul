@@ -208,23 +208,23 @@ if(Serial.available()) {                          //Send commands over serial to
     }
 
     /* Max Reverse */
-    if (duration <= 990 && bPlayNormal) 
+    if (duration <= 1050 && bPlayNormal) 
     {
       currThrottle = 7;
     };
-    if ((duration > 990) && (duration <= 1080) && bPlayNormal) 
+    if ((duration > 1050) && (duration <= 1150) && bPlayNormal) 
     {
       currThrottle = 6;
     };
-    if ((duration > 1080) && (duration <= 1170) && bPlayNormal) 
+    if ((duration > 1150) && (duration <= 1250) && bPlayNormal) 
     {
       currThrottle = 5;
     };
-    if ((duration > 1170) && (duration <= 1260) && bPlayNormal) 
+    if ((duration > 1250) && (duration <= 1350) && bPlayNormal) 
     {
       currThrottle = 4;
     };
-    if ((duration > 1260) && (duration <= 1480)) 
+    if ((duration > 1350) && (duration <= 1450)) 
     {
       if (bPlayNormal)
       {
@@ -237,13 +237,13 @@ if(Serial.available()) {                          //Send commands over serial to
     };
 
     /* Throttle stick center - Play idle sound */
-    if ((duration > 1480) && (duration <= 1520) && bPlayNormal) 
+    if ((duration > 1450) && (duration <= 1550) && bPlayNormal) 
     {
       currThrottle = 2;
     };
 
     /* Forard throttle */
-    if ((duration > 1520) && (duration <= 1680)) 
+    if ((duration > 1550) && (duration <= 1650)) 
     {
       if (bPlayNormal)
       {
@@ -254,15 +254,15 @@ if(Serial.available()) {                          //Send commands over serial to
       bPlayStart = false;
       }
     };
-    if ((duration > 1680) && (duration <= 1770) && bPlayNormal) 
+    if ((duration > 1650) && (duration <= 1750) && bPlayNormal) 
     {
       currThrottle = 4;
     };
-    if ((duration > 1770) && (duration <= 1860) && bPlayNormal) 
+    if ((duration > 1750) && (duration <= 1850) && bPlayNormal) 
     {
       currThrottle = 5;
     };
-    if ((duration > 1860) && (duration <= 1950) && bPlayNormal) 
+    if ((duration > 1850) && (duration <= 1950) && bPlayNormal) 
     {
       currThrottle = 6;
     };
