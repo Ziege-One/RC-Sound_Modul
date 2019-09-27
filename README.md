@@ -10,6 +10,7 @@ and TMRpcm library :https://github.com/TMRh20/TMRpcm/wiki
 
 # Features:
 -Speed-dependent engine noise only one motor-loop wave file
+
 -4 individual sounds
 
 # SD card content:
@@ -17,16 +18,21 @@ and TMRpcm library :https://github.com/TMRh20/TMRpcm/wiki
 The following files must be on the SD card
 
 start.wav -> engine start
+
 shut.wav  -> engine stop
 
 loop.wav -> Movement noise (loop) 
 
 Sound1.wav -> individual sound 1 (like Horn)
+
 Sound2.wav -> individual sound 2 
+
 Sound3.wav -> individual sound 3 
+
 Sound4.wav -> individual sound 4 
 
 Delay.txt -> seconds for Motor stop if standing noise (0 for deaktivate)
+
 Speed.txt -> max samplerate for loop.wav when max RC-input
  
 # description
