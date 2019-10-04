@@ -142,7 +142,7 @@ void loop() {
 
   if (not digitalRead(rc_sound2))
   {
-    if (!bPlaySound1)
+    if (!bPlaySound2)
     {
       bPlaySound2 = true; 
       tmrpcm.play("sound2.wav");
@@ -164,7 +164,7 @@ void loop() {
   {
     if (!bPlaySound3)
     {
-      bPlaySound1 = true; 
+      bPlaySound3 = true; 
       tmrpcm.play("sound3.wav");
       tmrpcm.speed(tmrpcm.orgsamplerate);
 #ifdef DEBUG        // Serial output on      
@@ -184,7 +184,7 @@ void loop() {
   {
     if (!bPlaySound4)
     {
-      bPlaySound1 = true; 
+      bPlaySound4 = true; 
       tmrpcm.play("sound4.wav");
       tmrpcm.speed(tmrpcm.orgsamplerate);
 #ifdef DEBUG        // Serial output on      
@@ -335,7 +335,7 @@ if(Serial.available()) {                          //Send commands over serial to
         playingSound = 1;
         prevThrottle = currThrottle;
       }
-      if (((currThrottle == 2) && (prevThrottle == 1)) || ((currThrottle == 3) && (prevThrottle == 1))) {
+      if (((currThrottle == 2) && ((prevThrottle == 1) || (tmrpcm.isPlaying() == 0))) || ((currThrottle == 3) && ((prevThrottle == 1) || (tmrpcm.isPlaying() == 0)))) {
         tmrpcm.play("loop.wav");
 #ifdef DEBUG        // Serial output on        
         Serial.println("loop.wav");
