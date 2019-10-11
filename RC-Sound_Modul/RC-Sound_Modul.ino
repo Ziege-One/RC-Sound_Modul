@@ -287,6 +287,7 @@ if(Serial.available()) {                          //Send commands over serial to
     if ((duration > 1480) && (duration <= 1520) && bPlayNormal) 
     {
       currThrottle = 2;
+      tmrpcm.speed(tmrpcm.orgsamplerate);
     };
 
     /* Forard throttle */
