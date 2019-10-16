@@ -69,6 +69,8 @@ int rc_sound2 = 5;  // Sound 2 on = pin to ground
 int rc_sound3 = 6;  // Sound 3 on = pin to ground
 int rc_sound4 = 7;  // Sound 4 on = pin to ground
 unsigned long duration = 1500;
+unsigned long last_duration = 1500;
+unsigned long duration_ramp = 50; // max change of duration in one loop
 unsigned long timer1;
 
 // Setup
@@ -223,6 +225,29 @@ void loop() {
     noInterrupts();
     duration = pulseIn(rc_pin, HIGH);      //Read throttel value
     interrupts();
+    if (duration > last_duration)          //throttel go up
+    {
+        if (last_duration + duration_ramp < duration)
+        {
+          duration = last_duration + duration_ramp;
+        }
+        else
+        {
+          duration = duration;
+        }
+    }
+    else                                   //throttel go down
+    {
+        if (last_duration - duration_ramp > duration)
+        {
+          duration = last_duration - duration_ramp;
+        }
+        else
+        {
+          duration = duration;
+        }
+    }
+    last_duration = duration;
 #endif    
     
   if (digitalRead(rc_engine))
